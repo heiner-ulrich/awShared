@@ -1,18 +1,19 @@
-# Salesforce DX Project: Next Steps
+# AW Shared Project
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+# clone repo
+git clone https://github.com/heiner-ulrich/awShared.git
 
-## How Do You Plan to Deploy Your Changes?
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+# enable devhub in org
 
-## Configure Your Salesforce DX Project
+# authorize devhub
+sfdx auth:web:login --setalias my-sandbox
+sfdx auth:web:login --setdefaultdevhubusername --setalias my-hub-org 
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+# enable source tracking and packaging
 
-## Read All About It
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+# create scratch
+sfdx force:org:create --definitionfile config/project-scratch-def.json --durationdays 30 --setalias aw-shared-ayo -v AW-org
+sfdx force:config:set defaultusername=aw-shared 
+sfdx force:org:open -u test-njpub1b4oghp@example.com
