@@ -14,6 +14,10 @@
                 <behavior>Readonly</behavior>
                 <field>Ayo_AutoNumber__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Super_Check_Box__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
